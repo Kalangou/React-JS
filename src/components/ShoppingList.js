@@ -1,26 +1,8 @@
-// const plantList = [
-//     'Banane',
-//     'Mangue',
-//     'Oraange',
-//     'Pomme',
-//     'Pasteque'
-// ]
-//
-// function ShoppingList() {
-//     return (
-//         <ul>
-//             {plantList.map((plant, index) => (
-//                 <li key={`${plant}-${index}`}>{plant}</li>
-//             ))}
-//         </ul>
-//     )
-// }
-
-import {plantList} from "../datas/plantList";
-import PlantItem from "./PlantItem";
+import { plantList } from '../datas/plantList'
+import PlantItem from './PlantItem'
 import '../styles/ShoppingList.css'
 
-function ShoppingList(){
+function ShoppingList() {
     const categories = plantList.reduce(
         (acc, plant) =>
             acc.includes(plant.category) ? acc : acc.concat(plant.category),
@@ -35,13 +17,13 @@ function ShoppingList(){
                 ))}
             </ul>
             <ul className='lmj-plant-list'>
-                {plantList.map(({id, name, cover, light, water}) => (
+                {plantList.map(({ id, cover, name, water, light }) => (
                     <PlantItem
-                        id={id}
-                        name={name}
+                        key={id}
                         cover={cover}
-                        light={light}
+                        name={name}
                         water={water}
+                        light={light}
                     />
                 ))}
             </ul>

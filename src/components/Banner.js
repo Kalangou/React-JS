@@ -1,14 +1,7 @@
 import '../styles/Banner.css'
-import logo from '../assets/logo.png'
 
-function Banner() {
-    const title = 'La maison jungle'
-    return (
-            <div className='lmj-banner'>
-                <img src={logo} alt='La maison de jungle' className='lmg-logo'/>
-                <h1>{title}</h1>
-            </div>
-        )
+function Banner({ children }) {
+    return <div className='lmj-banner'>{children}</div>
 }
 
 export default Banner
